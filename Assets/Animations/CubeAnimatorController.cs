@@ -22,7 +22,7 @@ public class CubeAnimatorController : MonoBehaviour
 
                 IsAnamation = !IsAnamation;
 
-                animation.SetBool("AnimTrigger",IsAnamation);
+                animation.SetBool("ChestTrigger",IsAnamation);
             }
         }
     }

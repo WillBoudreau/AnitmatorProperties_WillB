@@ -20,8 +20,7 @@ public class ChestAnimatorController : MonoBehaviour
     {
         if(Chestanimation != null)
         {
-            Debug.Log("Chest animation is not null");
-            if(Input.GetKeyDown(KeyCode.E) && !Chestanimation.GetBool("IsAnimating"))
+            if(Input.GetKeyDown(KeyCode.E) && !Chestanimation.GetBool("ChestTrigger"))
             {
                 Debug.Log("E Pressed");
                 TrigAnamation = !TrigAnamation;
@@ -31,11 +30,8 @@ public class ChestAnimatorController : MonoBehaviour
             {
                 if(Chestanimation.speed == 0f)
                 {
+                    Debug.Log("Resume");
                     ResumeAnim();
-                }
-                else
-                {
-                    PauseAnim();
                 }
             }
         }
@@ -51,11 +47,11 @@ public class ChestAnimatorController : MonoBehaviour
     void OpenChest()
     {
         IsOpen = true;
-        Chestanimation.SetBool("IsAnimating",false);
+        Chestanimation.SetBool("ChestTrigger",false);
     }
     void CloseChest()
     {
         IsOpen = false;
-        Chestanimation.SetBool("IsAnimating",false);
+        Chestanimation.SetBool("ChestTrigger",false);
     }
 }

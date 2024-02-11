@@ -26,7 +26,7 @@ public class ChestAnimatorController : MonoBehaviour
                 TrigAnamation = !TrigAnamation;
                 Chestanimation.SetBool("ChestTrigger",TrigAnamation);
             }
-            else if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E))
             {
                 if(Chestanimation.speed == 0f)
                 {
@@ -38,19 +38,23 @@ public class ChestAnimatorController : MonoBehaviour
     }
     void PauseAnim()
     {
+        Debug.Log("Pause");
         Chestanimation.speed = 0f;
     }
     void ResumeAnim()
     {
+        Debug.Log("Resume");
         Chestanimation.speed = speed;
     }
     void OpenChest()
     {
+        Debug.Log("Open");
         IsOpen = true;
         Chestanimation.SetBool("ChestTrigger",false);
     }
     void CloseChest()
     {
+        Debug.Log("Close");
         IsOpen = false;
         Chestanimation.SetBool("ChestTrigger",false);
     }
